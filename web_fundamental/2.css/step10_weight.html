@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weight</title>
+    <style>
+        li{
+            background-color: yellow;
+        }
+        ul li{
+            background-color: red;
+        }
+        .active {
+            background-color: pink;
+        }
+        li.active{
+            background-color: blue;
+        }
+        #one{
+            background-color: brown !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav">
+            <ul>
+                <!-- 인라인 코딩이 가장 우선순위가 높다. -->
+                <li class="active" id="one" style="background-color: green;">하나</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

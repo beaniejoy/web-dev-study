@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>size(상대 크기)</title>
+    <style>
+        html{
+            font-size: 10px;
+        }        
+        body{
+            /* 부모의 폰트크기 배수 */
+            font-size: 1.5em;
+        }
+        .a {
+            /* 부모의 폰트크기의 배수 */
+            font-size: 2.0em;
+        }
+        .b{
+            /* html font크기의 몇배인가 */
+            /* font크기는 rem으로 잡는 것이 좋다. */
+            font-size:2.0rem;
+        }
+        .c{
+            /* 부모의 폰트크기의 비율 */
+            font-size:100%;
+        }
+    </style>
+</head>
+<body>
+    <p class="a">Lorem ipsum dolor sit amet.</p>
+    <p style="font-size: 30px;">Lorem ipsum dolor sit amet.</p>
+    <p class="b">Lorem ipsum dolor sit amet.</p>
+    <p style="font-size: 20px;">Lorem ipsum dolor sit amet.</p>
+    <p class="c">Lorem ipsum dolor sit amet.</p>
+    <p style="font-size: 15px;">Lorem ipsum dolor sit amet.</p>
+
+</body>
+</html>
