@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        /**************1. 주석**************/
+        //한줄 주석
+        /*
+        여러줄 주석
+        */
+        var num1 = 1000;
+        var num1 = 1000; // 이중 선언이 가능하다.
+        
+        /**************2. 문자열**************/
+        // **문자열 선언하는 방법
+        var yourName = "조국";
+        var ourName = '조국을 사랑합니다.';
+        var myName = `asdfasd
+        asdfsadfsafsafsafdsdadfsafdsadf
+        asdfsafsafsafsadfsafsadfsafsdaf
+        safdsafsafsdafsadfasfdsafdsafsaf
+        asfdsafsafdsafsdafsafsafsafdsf`;
+        // 느낌표 옆에 `도 문자열 표시 가능
+        console.log(num1);
+        console.log(yourName);
+        console.log(ourName);
+        console.log(myName);
+        
+
+        /**************3. hoisting**************/
+        // ** 변수 Hoisting
+        // 자료형까지 비교하는 비교연산자
+        console.log(name2 === undefined);
+        console.log(name2);
+        // 이렇게 되면 변수가 위로 올라가 선언만 되고 할당이 안된다.
+        var name2 = "test";
+        // 이 아래로는 할당 받은 것임
+        console.log(name2 === undefined);
+        
+        // ** 함수 Hoisting
+        foo();
+        // foo 먼저 호출하고 뒤에 정의해도 나온다.
+        function foo(){
+            console.log(`function - foo`);
+        }
+        // 이때는 함수 hoisting이 안된다.
+        // baz();
+        var baz = function(){
+            console.log('function - baz');
+        }
+        baz(); // 아래에 써야 한다.
+
+        /**************4. let**************/
+        // ** let 변수 선언
+        let a1 = 1000;
+        // let a1 = 2000; // let 선언은 이중 선언이 안된다.
+        console.log(a1); // 에러발생
+        
+        // let은 var와 다르게 hoisting이 발생X
+        // 그냥 자바변수처럼 사용하면 된다.
+        // console.log(a2);
+        // let a2 = 1000;
+
+        // **local변수 관계
+        var b1 = 100;
+        console.log(b1);
+        if(true){
+            var b1 = 200;
+            console.log(b1);
+        }
+        console.log(b1);
+        // var는 if문 안과 바깥을 동일한 변수로 본다.
+        
+        // let은 java와 같이 if문 안에것과 바깥이 다르다.
+        let c1 = 100;
+        console.log(c1);
+        if(true){
+            let c1 = 200;
+            console.log(c1);
+        }
+        console.log(c1);
+        
+        /**************5. const**************/
+        // ** const 변수 선언(상수)
+        const d1 = 10;
+        // d1 = 20; // error 상수라고 생각
+
+        // 동적할당이 가능하다.
+        // reference는 안에 있는 값이 바뀌어도 괜찮다.(const도 가능)
+        const e1 = [1,2,3];
+        e1.push(4);
+        console.log(e1);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
