@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>float</title>
+    <style>
+        .container{
+            /* overflow: hidden
+            box를 전부 감싸게 된다.
+            */
+            border: 1px solid black;
+            overflow: hidden;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid red;
+            float:left;
+        }
+        .clear {
+            clear :both;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">div1</div>
+        <div class="box">div2</div>
+        <div class="box">div3</div>
+    </div>
+    <div class="clear">div4</div>
+    <div>div5</div>
+</body>
+</html>

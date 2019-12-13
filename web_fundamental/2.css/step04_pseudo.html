@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pseudo class</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+        /* 마우스로 가리키기만 할 때 */
+        .box:hover{
+            background-color: red;
+        }
+        /* 입력창에 마우스 클릭할 때 */
+        input:focus{
+            background-color: red;
+        }
+        /* 버튼 클릭시 */
+        button:active{
+            background-color: red;
+        }
+        a {
+            text-decoration: none;
+        }
+        /* 링크에 마우스 가리킬때 */
+        a:hover{
+            text-decoration: underline;
+        }
+        /* 링크에 방문하지 않았을 때 */
+        a:link{
+            color: red;
+        }
+        /* 링크 방문했었을 때 */
+        a:visited{
+            color:blue;
+        }
+        /* 해당 문장 첫글자 */
+        #one:first-letter{
+            font-weight: bold;
+            color: red;
+        }
+        /* 문장의 시작점에 표시 */
+        #quote::before{
+            content: "'";
+            color: red;
+        }
+        /* 문장의 끝지점에 표시 */
+        #quote::after{
+            content: "'";
+            color: blue;
+        }
+    </style>  
+</head>
+<body>
+    <div class="box"></div>
+    <input type="text">
+    <input type="text">
+    <button>버튼</button>
+    <button>버튼</button>
+    <a href="https://www.google.com">구글</a>
+    <a href="https://www.naver.com">네이버</a>
+    <p id="one">hello world</p>
+    <p id="first">hello world</p>
+    <p id="quote">hello world</p>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>table</title>
+    <style>
+        .container {
+            text-align: center;
+            width : 600px;
+            margin: 0 auto;
+        }
+        table {
+            /* border:1px solid black; */
+            border-collapse: collapse;
+        }
+        th {
+            border:1px solid black;
+        }
+        td {
+            border : 1px solid green;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h3>표(table)형식으로 정보 출력</h3>
+        <table>
+            <thead>
+                <th>와우</th>
+                <th>넘버</th>
+                <th>굿잡</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+        <table>
+            <!-- 테이블 제목: caption -->
+            <caption>친구목록 입니다.</caption>
+            <colgroup>
+                <col width="100px">
+                <col width="200px">
+                <col width="300px">
+            </colgroup>
+            <thead>
+                <th>번호</th>
+                <th>이름</th>
+                <th>주소</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td colspan="2">손정의</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>잡스</td>
+                    <td>미국</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>게이츠</td>
+                    <td>미국</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</body>
+</html>

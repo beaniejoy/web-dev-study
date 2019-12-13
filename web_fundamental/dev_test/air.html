@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kloser Air</title>
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width=device-width,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0, user-scalable=no, minimal-ui"/>
+	<style type="text/css">
+		body{
+			margin:0;
+			background:#404347;
+		}
+		.wrap, .wrap_sec{
+			max-width:600px;
+			background:#eceef2;
+			margin:0 auto;
+			padding-bottom:20px;
+		}
+		.content{
+			padding:10px 20px;
+		}
+		h3{	
+			width:150px;
+			text-align: center;
+			margin:0 auto;
+			color:#fff;
+			background:#3b71d5;
+			border-radius: 50px;
+			padding:10px;
+		}
+		#detail{
+			text-align:center;
+			margin-top:20px;
+			margin-bottom: 40px;
+		}
+		.selection{
+			margin:20px 10px;
+			margin-bottom: 50px;
+		}
+		h2{
+			margin-top:0px;
+		}
+		h2 span{
+			background:#3b71d5;
+			border-radius: 100px;
+			width:30px;
+			padding:5px 16px 7px 16px;
+			color: #fff;
+			margin-right:10px;
+		}
+		.video{
+			position:relative;
+			padding-top:56.25%;
+			height:0;
+		}
+		.video iframe{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+		}
+		.explain{
+			text-align:center;
+			font-size:20px;
+			margin-bottom: 10px
+		}
+		.choice{
+			cursor: pointer;
+			display: block;
+			border: 1px solid #2670DD;
+			background-color: #f5f5f5;
+			font-size: 18px;
+			color: #2670DD;
+			font-weight:bold;
+			border-radius:10px;
+			margin:0 auto;
+			padding:10px 20px;
+		}
+		.btn_result{
+			cursor:pointer;
+			margin:0 auto;
+			background-color:#3b71d5;
+			padding:15px 20px;
+			color: white;
+			font-size: 20px;
+			text-align: center;
+			border-radius:15px;
+			font-weight:bold;
+			max-width:300px;
+		}
+		.active{
+			cursor: pointer;
+			background:#3b71d5;
+			color:#fff;
+		}
+		#prof_photo{
+			display: block;
+			width:50px;
+			height:50px;
+			border-radius:50%;
+			padding:0px 10px;
+		}
+		.head{
+			display: flex;
+			color:gray;
+			padding:0px 20px;
+		}
+		#name b{
+			display:block;
+			color:black;
+			font-size:20px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="wrap" style="">
+		<div class="content">
+			<h3>이벤트 안내</h3>
+			<div id="detail">여러분이 응원하는 래퍼는 누구인가요?<br>
+			영상을 보고 마음에 드는 래퍼에 투표해주세요!
+			</div>
+			<div class="selection" id="select1">
+				<h2>
+					<span>1</span>
+					김하온
+				</h2>
+				<div class="video">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/Z1_PDXRRojg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<p class="explain">
+					김하온이 좋다면 클릭!
+				</p>
+				<input type="button" id="num1" class="choice" value="여기에 한표">
+			</div>
+			<div class="selection" id="select2">
+				<h2>
+					<span>2</span>
+					이병재
+				</h2>
+				<div class="video">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/HrmD5VY4UPE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<p class="explain">
+					이병재가 좋다면 클릭!
+				</p>
+				<input type="button" id="num2" class="choice" value="여기에 한표">
+			</div>
+			<div class="selection" id="select3">
+				<h2>
+					<span>3</span>
+					배연서(이로한)
+				</h2>
+				<div class="video">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/IZ2g5rE45kc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<p class="explain">
+					배연서가 좋다면 클릭!
+				</p>
+				<input type="button" id="num3" class="choice" value="여기에 한표">
+			</div>
+			<div class="selection" id="select4">
+				<h2>
+					<span>4</span>
+					윤진영
+				</h2>
+				<div class="video">
+					<iframe width="854" height="480" src="https://www.youtube.com/embed/AdqixSA0SjI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				</div>
+				<p class="explain">
+					윤진영이 좋다면 클릭!
+				</p>
+				<input type="button" id="num4" class="choice" value="여기에 한표">
+			</div>
+			<div class="btn_result" style="display:none">
+				<span>다음</span>
+			</div>
+		</div>
+	</div>
+	<div class="wrap_sec" style="display: none">
+		<div class="head">
+			<img id="prof_photo" src="image/winter.jpg" alt="프로필사진">
+			<div id="name">
+				<b>이한빈</b>
+				facebook
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".choice").click(function(){
+				$(".choice").removeClass("active"); 
+				// this와 .choice로 설정할 때 다르다. .choice는 이에 해당하는 모든 element를 호출
+				$(this).addClass("active");
+				$(".btn_result").fadeIn();
+			});
+			$(".btn_result").click(function(){
+				$(".content").fadeOut();
+				$(".wrap_sec").fadeIn();
+			})
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>form1</title>
+    <style>
+        .container {
+            width : 600px;
+            margin : 10px auto;
+        }        
+    </style>
+</head>
+<body>
+    <!-- 
+        하이퍼링크는 GET방식
+        로그인이나 중요정보 전달할 때는 POST방식
+
+        예외처리를 통해 GET방식에서 뒤에 문자열을 parseInt할 때
+        다른 경우를 차단함으로써 더 세련된 개발자가 되자.
+     -->
+
+     <!-- 
+         본인의 아이피주소/html파일로
+         모바일에서도 볼 수 있다.
+     -->
+    <div class="container">
+        <h3>폼요소 작성하기</h3>
+        <form action="save.html" method="POST">
+            <div>
+                <!-- 
+                    데스크탑에서는 차이가 없으나
+                    모바일에서는 차이가 발생
+                    type="email"로 해두면 @를 포함한 키보드 자판을 보여줌
+                -->
+                <label for="email2">이메일</label>
+                <!-- label for과 input의 id와 일치해야한다. -->
+                <input type="email" name="email" id="email2">
+            </div>
+            <div>
+                <label for="pwd2">비밀번호</label>
+                <input type="password" name="pwd" id="pwd2">
+            </div>
+            <div>
+                <button type="submit">로그인</button>
+                <button type="reset">취소</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

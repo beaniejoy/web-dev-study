@@ -1,0 +1,8 @@
+ /* css 인코딩 설정*/
+@charset "utf-8";
+
+p {
+   font-weight: bold;
+   background-color: blue;
+   color: white;
+}

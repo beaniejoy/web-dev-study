@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>position2</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            border:1px solid red;
+        }
+        .spacer{
+           height: 300px;
+           background-color: aqua;
+        }
+        #one{
+            position: relative;
+            top: 10px;
+            left:100px;
+        }
+        /* 부모가 static이 아닌 곳 기준으로 움직인다. */
+        #two{
+            position:absolute;
+            left:200px;
+            top:0px;
+        }
+        #three{
+            position:fixed;
+            right:100px;
+            top:100px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        static
+    </div>
+    <div class="box" id="one">
+        relative
+    </div>
+    <div class="spacer">
+        div3
+    </div>
+    <div class="box" id="two">
+        absolute
+    </div>
+    <div class="box" id="three">
+        fixed
+    </div>
+</body>
+</html>

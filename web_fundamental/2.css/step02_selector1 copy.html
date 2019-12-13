@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selector1</title>
+    <!-- 외부와 내부 css간에 충동하면 외부꺼에다 내부css가 이어서 써진다.-->
+    <style>
+        /* element selector */
+        p {
+            font-size: 20px;
+        }
+
+        .bg-yellow {
+            background-color: yellow;
+        }
+
+        #myDiv {
+            color:blue;
+        }
+
+    </style>
+</head>
+<!-- inline css 적용도 그 위에 css 편집에다 덧붙인다는 개념 -->
+<body>
+    <div>div1</div>
+    <div class="bg-yellow">div2</div>
+    <div class="bg-yellow">div3</div>
+    <dov id="myDiv">div4</dov>
+</body>
+</html>

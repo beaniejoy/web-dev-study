@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>selector2</title>
+    <!-- 외부와 내부 css간에 충동하면 외부꺼에다 내부css가 이어서 써진다.-->
+    <style>
+        /* +는 해당 위치에서 바로 인접한 바로 다음 요소 */
+        .container + p{
+            background-color: green;
+        }
+    </style>
+</head>
+<!-- inline css 적용도 그 위에 css 편집에다 덧붙인다는 개념 -->
+<body>
+    
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+    <div class="container">
+        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.
+        <div>
+            <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+        </p>
+    </div>
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet.</p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>image and video</title>
+    <style>
+        /* body{
+            background-image: url("gent.jpg");
+        } */
+        img {
+            width : 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        src => 이미지 경로
+        alt => 이미지가 없는 겨웅 대체 텍스트로 출력, 접근성 관점에서
+        이미지를 스크린 리더에게 알려줌으로써 이미지를 설명해준다.
+        width, height => img 요소에 사용하지 말고 style로 정의하자.
+     -->
+    <img src="gent.jpg" alt="pixabay">
+
+    <video width="800" height="640" autoplay controls>
+        <source src="vlog.mp4" type="video/mp4"> 
+    </video>
+    <!-- <iframe width="763" height="429" src="https://www.youtube.com/embed/CZxhnSSZMXo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+</body>
+</html>
