@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js: boolean</title>
+    <script>
+        /*
+        boolean type
+        1. true, false를 직접 작성하거나, 비교연산 또는 논리연산결과로 만들어진다.
+        2. boolean type 변수 이름은 대화식으로 작성한다.
+        */
+
+        let isRun = true;
+        let isWait = false;
+        let isSmaller = 10 < 5;
+        let isEqual = 10 == 1000;
+        let isDifferent = 10 != 10;
+        if (isRun) {
+            console.log(`달리고 있어요.`);
+        } //falsy value;
+
+        let a = 0; //0(zero)
+        let b = ''; //' '는 true로 나온다.
+        let c; //undefined
+        let d = parseInt("abc"); //NaN
+        // 위의 a,b,c,d는 전부 falsy value
+        if (a) {
+            console.log("true");
+        } else {
+            console.log("false");
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

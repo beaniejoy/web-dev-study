@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js: element</title>
+    <script>
+        // 이벤트 등록하기
+        window.onload = function () {
+            // 클릭할 때 이벤트 등록
+            document.getElementById("addBtn").addEventListener("click", function () {
+                let msg = document.getElementById("inputMsg").value;
+                const li = document.createElement("li");
+                li.innerText = msg;
+                document.getElementById("msgList").append(li);
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="msg" id="inputMsg" />
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+        <li>하나</li>
+        <li>둘</li>
+        <li>셋</li>
+    </ul>
+</body>
+
+</html>

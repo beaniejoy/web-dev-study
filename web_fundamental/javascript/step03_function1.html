@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js: function1</title>
+    <script>
+        /*
+        function type
+        1. 특정 시점에 일괄 실행할 javascript를 모아 놓는 역할을 한다.
+        (메서드 가능)
+        2. javascript에서는 함수도 객체이기 때문에 변수에 할당하거나
+        다른 함수를 호출하면서 전달할 수 있다.
+
+        함수종류
+        1) 선언적 함수 - 함수 호이스팅 가능
+        2) 함수식 - 함수 호이스팅 불가능
+        3) 생성자 함수
+        */
+
+        //1) 선언적 함수 - function hoisting
+        test1();
+        function test1() {
+            console.log("test1 function success!");
+        }
+
+        //2) 함수식 -function hoisting not possible
+        // test2(); //Error 발생(Uncaught ReferenceError)
+        const test2 = function () { //익명함수라고 한다.
+            console.log("test2 function success!");
+        }// 결국 익명함수를 선언한 test2라는 변수에 할당한 것이다.
+        //함수식은 반드시 함수를 만든 후에 호출해야 한다.
+        test2();
+
+        const test3 = test2; //다른변수에도 할당 가능
+        test3();
+
+        console.log(typeof test1); //function
+
+        // 반환타입이 없는데도 return이 가능하다.
+        const test4 = function () {
+            return 999;
+        }
+        let test5 = test4();
+        console.log(test5); //999
+
+        const test6 = function () {
+            return "hello!";
+        }
+        let test7 = test6();
+        console.log(test7); //hello!
+
+        const test8 = function () {
+            return { "name": "lee", "loc": "Seoul" };
+        }
+        const test9 = test8();
+        console.log(test9); //{ "name": "lee", "loc": "Seoul" }
+
+        const test10 = function () {
+            return [1, 2, 3, 4];
+        }
+        const test11 = test10();
+        console.log(test11); //[1, 2, 3, 4]
+
+        //함수를 또 반환할 수 있다.
+        const test12 = function () {
+            return function () {
+                console.log("test12's return function")
+            }
+        }
+        const test13 = test12();
+        test13();
+        (test12())(); // 똑같은 호출 방식
+        // javascript에 기반한 변수형은 전부다 반환 가능하다.
+
+        const getSum = function (num1, num2) {
+            console.log(arguments.length);
+            console.log(typeof num1);
+            console.log(typeof num2);
+            let result = num1 + num2;
+            return result;
+        }
+        let result1 = getSum(10, 20);
+        let result2 = getSum(100, 200, 300); //결과값 300 => 마지막 인자는 오바되어서 버려짐
+        let result3 = getSum(10000); //NaN으로 리턴
+        console.log(result3); 
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js: DOM</title>
+
+    <script>
+        /*
+        문서객체모델(DOM)
+        html 내에 있는 요소 하나하나를 document object(node)라고 한다.
+        */
+        // html객체가 다 만들어진 후에 호출이 된다.
+        window.onload = function () {
+            const h1 = document.createElement("h1");
+            const textNode = document.createTextNode("Hello World");
+            h1.appendChild(textNode);
+            // body가 생성이 되어야 에러가 발생안하고 생성
+            document.body.appendChild(h1);
+        }
+        // 이렇게 안하고 script를 맨 아래에다 해도 된다.
+    </script>
+</head>
+
+<body>
+    <script>
+        const h1 = document.createElement("h1");
+        const textNode = document.createTextNode("Hello World2");
+        h1.appendChild(textNode);
+        // body가 생성이 되어야 에러가 발생안하고 생성
+        document.body.appendChild(h1);
+    </script>
+</body>
+<script>
+    console.log("end of html");
+</script>
+
+</html>

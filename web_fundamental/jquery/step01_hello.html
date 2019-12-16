@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello jQuery</title>
+    <script src="../js/jqeury-3.4.1.js">
+        $(function () { //window.onload를 의미한다.(외워두면 좋다.)
+            $(".welcome").html("<p>Hello World</p>");
+            $(".welcome").css("background-color", "yellow");
+        })   
+        //window onload의 또 다른 표현(이렇게 표현하는 사람도 많다.)
+        //둘다 알아두자.
+        $(document).ready(function(){
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="welcome"></div>
+
+</body>
+
+</html>
