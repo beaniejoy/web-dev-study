@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery: traversing</title>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        /*
+        핵심은 each, next, parent만 알아도 웬만한건 다 찾아간다.
+        > javascript는 노드를 찾아가는 메서드가 없어서 상당히 힘들다.
+        > jQuery는 노드를 찾아가는 메서드가 많이 존재하고 selector를 이용할 수 있어서
+            상당히 유용하고 이용하기 편하다.
+        > jQuery에서 가장 중요한 부분
+        */
+        $(document).ready(function () {
+            // $("li").eq(0).addClass('s');
+            // $("li").first().addClass('s');
+            // $("li").not(":first").addClass('s')
+            /*
+            $("li").each(function(index, element){ //each는 li요소들 하나하나 다 불러옴
+                console.log(index, element);
+                console.log($(this).text());
+            })
+            */
+            // index (자리값), value, element(해당 element를 지칭함)
+            // $(this): 해당 element를 받아옴
+
+            // $("#root").children().addClass('s');// $("#root>div").addClass('s');
+            // 현재 element를 포함해서 가장 가까운 부모 element를 찾는다.
+            // $("ul").closest("div").addClass('s'); // ul의 가장 가까운 부모와 자기자신을 지칭
+
+            // $("#root").find("li").first().addClass('s');
+            // $("#root").find("li").first().next().addClass('s'); // 바로 다음의 요소 지칭
+            // $("#root").find("li").first().nextAll().addClass('s'); // 현재 위치에서 다음 요소들 전부다
+            // $("#root").find("li").parent().addClass('s'); // 바로 위의 부모요소
+            // parents()는 해당 요소를 감싸고 있는 모든 부모들(같은 계층의 모든 부모들 출력)
+
+            // $("li").eq(2).prev().addClass('s'); // prevAll은 그 전의 모든 요소들
+            $("li").parent().parent().siblings().addClass('s'); // 자기자신의 형제들(본인 제외)
+        });
+    </script>
+    <style type="text/css">
+        #panel div,
+        #panel ul,
+        #panel li,
+        #header {
+            border: 2px solid rgb(48, 31, 31);
+            margin:
+                10px;
+            padding: 10px;
+        }
+
+        #message {
+            width: 98%;
+            height: auto;
+            font-size: 20px;
+            padding: 14px 10px;
+            border: 1px solid #999;
+        }
+
+        #panel ul {
+            list-style: none;
+        }
+
+        #panel .s {
+            border: 2px solid red;
+            background-color: yellow;
+        }
+
+        .remov {
+            border: 2px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="panel">
+        <div id="root">
+            div id="root"
+            <div id="first">
+                div id=""first""
+            </div>
+            <div>
+                div
+                <ul>
+                    ul
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li>li</li>
+                    <li></li>
+                </ul>
+                <div class="third">div class="third"</div>
+            </div>
+            <div>div</div>
+
+        </div>
+    </div>
+
+    <script type='text/javascript'>
+        /*
+            동적으로 script 코드를 추가하는 방법
+        */
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js";
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+    </script>
+
+</body>
+
+</html>

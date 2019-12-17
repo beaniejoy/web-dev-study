@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery: event</title>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".error").hide();
+            $("#id").focus();
+            // $("#sendMember").on("click", function(e){}) 이런식으로 event 처리할 수도 있다.
+            $("#sendMember").click(function (e) {
+                // 기본기능을 방지하기 위해서 사용한다.
+                // submit버튼은 return을 하더라도 그냥 전송해버린다.
+                // 그 기능을 없애버린 것이다.
+                e.preventDefault();
+                //유효성 검사, 빈 값이면 error매세지 표시
+                let id = $("#id").val(); //해당 value를 가져오고 싶을 때
+                let email = $("#email").val();
+                let password = $("#password").val();
+                let checkPassword = $("#checkPassword").val();
+
+                let isCheck = true;
+                // id, email, password, checkPassword가 기입됐는지 아닌지 check
+                if (checkPassword) {
+                    $("#errorCheckPassword").hide();
+                } else {
+                    $("#errorCheckPassword").show();
+                    $("#checkPassword").focus();
+                    $("#errorMissmatchPassword").hide();
+                    isCheck = false;
+                }
+
+                if (password) {
+                    $("#errorPassword").hide();
+                } else {
+                    $("#errorPassword").show();
+                    $("#password").focus();
+                    $("#errorMissmatchPassword").hide();
+                    isCheck = false;
+                }
+
+                if (email) {
+                    $("#errorEmail").hide();
+                } else {
+                    $("#errorEmail").show();
+                    $("#email").focus();
+                    $("#errorMissmatchPassword").hide();
+                    isCheck = false;
+                }
+
+                if (id) {
+                    $("#errorId").hide();
+                } else {
+                    $("#errorId").show();
+                    $("#id").focus();
+                    $("#errorMissmatchPassword").hide();
+                    isCheck = false;
+                }
+
+                if (isCheck) {
+                    if(password != checkPassword){
+                        $("#errorMissmatchPassword").show();
+                        $("#checkPassword").val("");
+                        $("#checkPassword").focus();
+                        return;
+                    } else{
+                        $("#errorMissmatchPassword").hide();
+                        $("#errorCheckPassword").hide();
+                    }
+                } else {
+                    return; // 이 이후의 것들을 실행이 안된다.
+                }
+
+                f.submit();
+            });
+        });
+        
+    </script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <h3>jquery event</h3>
+    <form action="save.html" method="POST" name="f">
+        <label for="id">아이디</label>
+        <input type="text" name="id" id="id" placeholder="아이디">
+        <span class="error" id="errorId">아이디를 입력하세요</span>
+        <br>
+        <label for="email">이메일</label>
+        <input type="text" name="email" id="email" placeholder="이메일">
+        <span class="error" id="errorEmail">이메일을 입력하세요</span>
+        <br>
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password" placeholder="비밀번호">
+        <span class="error" id="errorPassword">비밀번호를 입력하세요</span>
+        <br>
+        <label for="checkPassword">비밀번호 확인</label>
+        <input type="password" name="checkPassword" id="checkPassword" placeholder="비밀번호 확인">
+        <span class="error" id="errorCheckPassword">비밀번호 확인을 입력하세요</span>
+        <span class="error" id="errorMissmatchPassword">비밀번호가 일치하지 않습니다.</span>
+        <br>
+        <button type="submit" id="sendMember">회원가입</button>
+        <button type="reset" id="resetMember">취소</button:type>
+    </form>
+</body>
+
+</html>

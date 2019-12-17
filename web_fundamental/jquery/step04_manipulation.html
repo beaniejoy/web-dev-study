@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery: manipulation</title>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("p").prepend("<strong> prepend </strong>"); // 이 표현이 더 좋은듯
+            $("<strong> prependTo </strong>").prependTo("p");
+
+            $("p").append("<strong> append </strong>");
+            $("<strong> appendTo </strong>").appendTo("p");
+
+            $("p").after("<strong> after </strong>");
+            $("p").before("<strong> before </strong>");
+
+            // text는 그안에 string을 그대로 text로 집어 넣는다.(태그 인식X)
+            $("p").text("<strong> 제이쿼리 </strong>");
+            // html은 태그를 인식한다. append하는 것이 아니라 초기화해서 넣는다.
+            $("p").html("<strong> 제이쿼리 </strong>");
+            console.log($("p").text()); // 제이쿼리
+            console.log($("p").html()); // <strong> 제이쿼리 </strong>
+
+            //p를 기준으로 어떤 걸로 감싸주는 기능
+            $("p").wrap("<div></div>");
+
+            // $("p").remove(); // detach()는 동일하다. 엘리먼트 자체를 지우는 것
+            $("p").empty() // p element안에 text만 비울 때
+        });
+    </script>
+    <style type="text/css">
+        div {
+            border: 1px solid red;
+        }
+
+        p {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <p>jQuery</p>
+</body>
+
+</html>
